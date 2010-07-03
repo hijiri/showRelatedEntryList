@@ -7,7 +7,7 @@
  * @link      http://tkns.homelinux.net/
  * @license   http://www.opensource.org/licenses/bsd-license.php  New BSD License
  * @since     2010.05.25
- * @version   10.6.11
+ * @version   10.7.3
  */
 
 $this->plugin->addFilter('permalink-view', 'showRelatedEntryList');
@@ -71,9 +71,9 @@ function showRelatedEntryList($text)
                                           );
                 }
 
-                if ($entryCount <= count($relatedEntryList)) { break; }
             }
             uasort($relatedEntryList, 'compare');
+            $relatedEntryList = array_slice($relatedEntryList, 0, $entryCount);
         }
 
         // Markup
