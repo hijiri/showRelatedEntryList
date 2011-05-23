@@ -7,7 +7,7 @@
  * @link      http://tkns.homelinux.net/
  * @license   http://www.opensource.org/licenses/bsd-license.php  New BSD License
  * @since     2010.05.25
- * @version   10.7.3
+ * @version   11.5.23
  */
 
 $this->plugin->addFilter('permalink-view', 'showRelatedEntryList');
@@ -28,7 +28,7 @@ function showRelatedEntryList($text)
     $tagetStr      = '<!-- related -->';
     // SETTING END
 
-    if(!ereg('/downloads/', $app->getRequestURI())) {
+    if(!preg_match('/\/downloads\//', $app->getRequestURI())) {
         // Get Log ID List
         $tagIdList = $app->getTagIdArray();
         foreach ($tagIdList as $row) {
